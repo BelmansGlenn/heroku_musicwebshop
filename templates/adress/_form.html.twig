@@ -1,0 +1,11 @@
+{{ form_start(form) }}
+{{form_row(form.fullName, {'label': 'Fullname:'})}}
+{{form_row(form.company, {'label': 'Company:'})}}
+{{form_row(form.adress, {'label': 'Address:'})}}
+{{form_row(form.complement, {'label': 'More details:'})}}
+{{form_row(form.phone, {'label': 'Phone number:'})}}
+{{form_row(form.city, {'label': 'City:'})}}
+{{form_row(form.postalCode, {'label': 'Postal code:'})}}
+{{form_row(form.country, {'label': 'Country:'})}}
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
