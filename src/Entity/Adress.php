@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\AdressRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AdressRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=AdressRepository::class)
@@ -19,41 +20,49 @@ class Adress
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("linkApiProfile")
      */
     private $fullName;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("linkApiProfile")
      */
     private $company;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups("linkApiProfile")
      */
     private $adress;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Groups("linkApiProfile")
      */
     private $complement;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("linkApiProfile")
      */
     private $phone;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("linkApiProfile")
      */
     private $city;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("linkApiProfile")
      */
     private $postalCode;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("linkApiProfile")
      */
     private $country;
 

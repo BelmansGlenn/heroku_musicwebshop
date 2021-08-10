@@ -21,11 +21,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("linkApiProfile")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Groups("linkApiProfile")
      */
     private $email;
 
@@ -43,16 +45,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups("linkApiProducts")
+     * @Groups("linkApiProfile")
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("linkApiProfile")
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("linkApiProfile")
      */
     private $lastname;
 
@@ -63,6 +68,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\OneToMany(targetEntity=Adress::class, mappedBy="user")
+     * @Groups("linkApiProfile")
      */
     private $adresses;
 
