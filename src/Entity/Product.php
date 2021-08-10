@@ -77,6 +77,7 @@ class Product
 
     /**
      * @ORM\ManyToMany(targetEntity=Categories::class, inversedBy="products")
+     * @Groups("linkApiProducts")
      */
     private $category;
 
@@ -88,12 +89,12 @@ class Product
 
     /**
      * @ORM\OneToMany(targetEntity=RelatedProduct::class, mappedBy="product")
-     * @Groups("linkApiProducts")
      */
     private $relatedProducts;
 
     /**
      * @ORM\OneToMany(targetEntity=Reviews::class, mappedBy="product")
+     * @Groups("linkApiProducts")
      */
     private $reviews;
 

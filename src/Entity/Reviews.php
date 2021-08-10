@@ -20,17 +20,20 @@ class Reviews
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("linkApiProducts")
      */
     private $note;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Groups("linkApiProducts")
      */
     private $comment;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="reviews")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups("linkApiProducts")
      */
     private $user;
 

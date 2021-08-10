@@ -22,6 +22,7 @@ class Tags
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("linkApiProducts")
      */
     private $name;
 
