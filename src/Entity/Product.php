@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ProductRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ProductRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
@@ -16,51 +17,61 @@ class Product
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups('linkApiProducts')
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups('linkApiProducts')
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups('linkApiProducts')
      */
     private $description;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Groups('linkApiProducts')
      */
     private $moreDetails;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups('linkApiProducts')
      */
     private $price;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * @Groups('linkApiProducts')
      */
     private $isBestSeller = false;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * @Groups("linkApiProducts")
      */
     private $isNewArrival = false;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * @Groups("linkApiProducts")
      */
     private $isFeatured = false;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * @Groups("linkApiProducts")
      */
     private $isSpecialOffer = false;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("linkApiProducts")
      */
     private $image;
 
@@ -71,26 +82,31 @@ class Product
 
     /**
      * @ORM\ManyToMany(targetEntity=Tags::class, mappedBy="product")
+     * @Groups("linkApiProducts")
      */
     private $tags;
 
     /**
      * @ORM\OneToMany(targetEntity=RelatedProduct::class, mappedBy="product")
+     * @Groups("linkApiProducts")
      */
     private $relatedProducts;
 
     /**
      * @ORM\OneToMany(targetEntity=Reviews::class, mappedBy="product")
+     * @Groups("linkApiProducts")
      */
     private $reviews;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("linkApiProducts")
      */
     private $quantity;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups("linkApiProducts")
      */
     private $createdAt;
 
