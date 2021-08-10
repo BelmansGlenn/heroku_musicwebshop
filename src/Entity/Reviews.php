@@ -20,7 +20,6 @@ class Reviews
 
     /**
      * @ORM\Column(type="integer")
-     * @Groups("linkApiProducts")
      */
     private $note;
 
@@ -32,7 +31,6 @@ class Reviews
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="reviews")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups("linkApiProducts")
      */
     private $user;
 

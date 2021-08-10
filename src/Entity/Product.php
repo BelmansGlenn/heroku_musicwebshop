@@ -17,37 +17,37 @@ class Product
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups('linkApiProducts')
+     * @Groups("linkApiProducts")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups('linkApiProducts')
+     * @Groups("linkApiProducts")
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups('linkApiProducts')
+     * @Groups("linkApiProducts")
      */
     private $description;
 
     /**
      * @ORM\Column(type="text", nullable=true)
-     * @Groups('linkApiProducts')
+     * @Groups("linkApiProducts")
      */
     private $moreDetails;
 
     /**
      * @ORM\Column(type="float")
-     * @Groups('linkApiProducts')
+     * @Groups("linkApiProducts")
      */
     private $price;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
-     * @Groups('linkApiProducts')
+     * @Groups("linkApiProducts")
      */
     private $isBestSeller = false;
 
@@ -94,7 +94,6 @@ class Product
 
     /**
      * @ORM\OneToMany(targetEntity=Reviews::class, mappedBy="product")
-     * @Groups("linkApiProducts")
      */
     private $reviews;
 
