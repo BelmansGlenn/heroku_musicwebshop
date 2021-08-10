@@ -1,0 +1,7 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<div>
+		<img src="/assets/upload/products/{{product.image}}" alt="{{product.image}}" width="200px" height="200px">
+		<p>{{product.price/100}}</p>
+	</div>
+{% endblock %}
