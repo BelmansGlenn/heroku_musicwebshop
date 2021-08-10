@@ -15,8 +15,21 @@ class ApiPostController extends AbstractController
     /**
      * @Route("/api/product", name="api_post_index", methods={"GET"})
      */
-    public function index(ProductRepository $productRepository)
+    public function index(ProductRepository $productRepository, SerializerInterface $serializer)
     {
-        return $this->json($productRepository->findAll(), 200, [], ['groups' => 'linkApiProducts']);
+        $posts = $productRepository->findAll();
+
+        // $postsNormalises = $normalizer->normalize($posts, null, ['groups' => 'jecrisCqueJveux']);
+
+        // $json = json_encode($postsNormalises);
+
+        $json = $serializer->serialize($posts, 'json', ['groups' => 'linkApiProducts']);
+
+        // $response = new Response($json, 200, [
+        //     "Content-Type" => "application/json"
+        // ]);
+
+        $response = new JsonResponse($json, 200, [], true);
+        return $response;
     }
 }
